@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odette Blacklock | Movement Specialist & Podiatrist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero .cta {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Who I Am Section */
+        .about {
+            padding: 5rem 2rem;
+            background: #f9f9f9;
+        }
+
+        .about .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .about .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .about .badge {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .about p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Offerings Section */
+        .offerings {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .offering-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .offering-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .offering-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Corporate Section */
+        .corporate {
+            padding: 5rem 2rem;
+            background: white;
+            border-top: 3px solid #667eea;
+        }
+
+        .corporate-intro {
+            max-width: 900px;
+            margin: -1rem auto 3rem;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .corporate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .corporate-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .corporate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+        }
+
+        .corporate-card h3 {
+            font-size: 1.2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .corporate-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .corporate-cta {
+            text-align: center;
+            padding: 2.5rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .corporate-cta h4 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Story Section */
+        .story {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+        }
+
+        .story p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-highlight {
+            background: #f0f0f0;
+            padding: 2rem;
+            border-left: 4px solid #667eea;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        /* Articles & Events Section */
+        .articles {
+            padding: 5rem 2rem;
+            background: #f9f9f9;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+        }
+
+        .article-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: #1a1a1a;
+        }
+
+        .article-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .article-link:hover {
+            color: #764ba2;
+        }
+
+        /* Events Section */
+        .events {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .events .section-title {
+            color: white;
+        }
+
+        .events-intro {
+            max-width: 800px;
+            margin: -1rem auto 3rem;
+            text-align: center;
+            font-size: 1.05rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .event-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card-featured {
+            background: rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .event-card-featured:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .event-card-featured h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .event-card-featured p {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .event-card-featured ul {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .event-card-featured li {
+            margin-bottom: 0.5rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .event-booking-link {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 0.7rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .event-booking-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            .about, .offerings, .story, .articles, .reviews {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1>Odette Blacklock</h1>
+            <div>
+                <a href="#about">About</a>
+                <a href="#corporate">For Organizations</a>
+                <a href="#offerings">Services</a>
+                <a href="#events">Events</a>
+                <a href="#story">Story</a>
+                <a href="#articles">Featured</a>
+                <a href="#reviews">Reviews</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Move Better. Feel Stronger. Unlock Your Potential.</h2>
+            <p>Founder of the Blacklock Method | Movement Specialist | Podiatrist | World Champion</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="https://bodybreathmindset.mvt.so/" class="cta" target="_blank">Book a Session</a>
+                <a href="#about" class="cta" style="background: rgba(255,255,255,0.2); border: 2px solid white;">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Who I Am Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div>
+                <h3>Who I Am</h3>
+                <p>I'm a highly experienced podiatrist and movement specialist with <span class="highlight">over 20 years</span> in fitness and rehabilitation. I combine clinical expertise with real-world resilience—from competing on Survivor Australia to winning the World Champion Masters 70m Beach Sprint title in 2024.</p>
+                <p>My approach integrates myofascial movement, breathwork, and nervous system regulation to restore efficient movement patterns and build lasting health.</p>
+                <div class="credentials">
+                    <span class="badge">Bachelor Health Science</span>
+                    <span class="badge">Master's Podiatric Medicine</span>
+                    <span class="badge">Clinical Pilates Instructor</span>
+                    <span class="badge">Certified Personal Trainer</span>
+                    <span class="badge">Mindset Coach</span>
+                </div>
+            </div>
+            <div>
+                <h3>What I Offer</h3>
+                <p><span class="highlight">1:1 Gait & Postural Rehabilitation</span><br>Personalized coaching for optimal movement and longevity.</p>
+                <p><span class="highlight">Prehab Workshops (The Blacklock Method)</span><br>Interactive sessions teaching myofascial release, breathwork, mobility, and functional strength.</p>
+                <p><span class="highlight">Corporate Health & Wellness</span><br>Keynote speaking, workshops, and breathwork programs for teams and organizations.</p>
+                <p><span class="highlight">Retreat Facilitation</span><br>Partner with Gwinganna and Elements Health Retreats for transformative wellness experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Solutions Section -->
+    <section class="corporate" id="corporate">
+        <div class="container">
+            <h2 class="section-title">Hire Odette for Your Organization</h2>
+            <div class="corporate-intro">
+                <p>Transform your team's health, wellbeing, and culture. Odette designs and delivers custom workshops, keynote presentations, and coordinated music + movement experiences for corporate events, retreats, and wellness programs.</p>
+            </div>
+            <div class="corporate-grid">
+                <div class="corporate-card">
+                    <h3>🎤 Keynote Speaking</h3>
+                    <p>Inspiring talks on resilience, performance, and human potential. Tailored to your audience and event theme with real-world stories and actionable insights.</p>
+                </div>
+                <div class="corporate-card">
+                    <h3>💼 Corporate Workshops</h3>
+                    <p>Customized sessions on movement health, breathwork, nervous system regulation, and postural wellness. Delivered on-site or virtually for groups of any size.</p>
+                </div>
+                <div class="corporate-card">
+                    <h3>🎵 Music + Movement Events</h3>
+                    <p>Full-scale experiences combining wellness, entertainment, and community building. DJs, live performance, breathwork, mobility—complete coordination included.</p>
+                </div>
+                <div class="corporate-card">
+                    <h3>🏥 Wellness Programs</h3>
+                    <p>Comprehensive health initiatives including gait analysis, ergonomic assessments, team mobility classes, and ongoing coaching for employee wellbeing.</p>
+                </div>
+            </div>
+            <div class="corporate-cta">
+                <h4>Ready to elevate your team's health and culture?</h4>
+                <p style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://bodybreathmindset.mvt.so/" class="cta-button" target="_blank">Book Now</a>
+                    <a href="mailto:blacklockwellness@gmail.com?subject=Corporate Workshop or Speaking Inquiry" class="cta-button" style="background: #764ba2;">Send Inquiry</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Section -->
+    <section class="offerings">
+        <h2 class="section-title">Services & Specializations</h2>
+        <div class="offerings-grid">
+            <div class="offering-card">
+                <h4>🏃 Movement & Gait</h4>
+                <p>Restore efficient walking patterns and improve posture through biomechanics and functional training.</p>
+            </div>
+            <div class="offering-card">
+                <h4>🧠 Nervous System Reset</h4>
+                <p>Breathwork and mindfulness practices to regulate stress, build resilience, and enhance wellbeing.</p>
+            </div>
+            <div class="offering-card">
+                <h4>💪 Strength & Mobility</h4>
+                <p>Intelligent, whole-body rehabilitation that combines myofascial techniques with functional strength.</p>
+            </div>
+            <div class="offering-card">
+                <h4>🎤 Speaking & Facilitation</h4>
+                <p>Inspiring keynotes on resilience, performance, and human potential drawn from lived experience.</p>
+            </div>
+            <div class="offering-card">
+                <h4>🏥 Clinical Podiatry</h4>
+                <p>Expert foot and lower limb assessment integrated with whole-body movement strategy.</p>
+            </div>
+            <div class="offering-card">
+                <h4>🌱 Holistic Health</h4>
+                <p>Comprehensive approach combining science, practice, and mindset for lasting transformation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events & Community Section -->
+    <section class="events" id="events">
+        <div class="container">
+            <h2 class="section-title">Events & Community Experiences</h2>
+            <div class="events-intro">
+                <p>Join us for sold-out experiences that bring community together through movement, music, and pure joy. Every event blends breathwork, mobility work, dance, live entertainment, and world-class DJs to create unforgettable moments.</p>
+            </div>
+            <div class="event-highlights">
+                <div class="event-card-featured">
+                    <h3>🎵 Music + Movement Events</h3>
+                    <p>High-energy gatherings featuring breathwork sessions, guided mobility work, live DJ performances, and entertainment. Past events sold out within days.</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; color: #555;">
+                        <li>Sold-out community experiences</li>
+                        <li>Professional DJs & live entertainment</li>
+                        <li>Breathwork & nervous system reset</li>
+                        <li>Movement & mobility sessions</li>
+                    </ul>
+                </div>
+                <div class="event-card-featured">
+                    <h3>🏓 Pickleball Sunday Sessions</h3>
+                    <p><strong>Upcoming:</strong> Join our next Pickleball Sunday featuring movement sessions to improve longevity in sports, hosted by Odette with professional DJ entertainment.</p>
+                    <p style="margin-top: 1.5rem;"><a href="https://bodybreathmindset.mvt.so/" class="event-booking-link" target="_blank">Book Your Spot →</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="story-content">
+            <h3>My Story</h3>
+            <p>My journey has been one of resilience, reinvention, and proven results. After suffering a career-threatening ankle injury, I pioneered my own rehabilitation methods, defying expectations to return stronger than ever.</p>
+
+            <div class="story-highlight">
+                <strong>🏆 In 2024:</strong> I won three national titles and claimed the World Champion Masters 70m Beach Sprint title—proof that intelligent training, scientific expertise, and mindset mastery transform lives.
+            </div>
+
+            <p>My experiences competing on Survivor Australia and running in Death Valley have shaped my deep understanding of endurance, adaptability, and mental toughness. These aren't just achievements—they're lessons I share with every client.</p>
+
+            <p>With a Bachelor of Health Science and Master's in Podiatric Medicine, I've worked with global brands including Runner's World, Lorna Jane, Under Armour, and True Protein. I was recognized as Most Innovative Trainer by Sir Richard Branson's Roger Magazine.</p>
+
+            <p>Today, I apply this unique blend of clinical expertise, lived experience, and practical insight to help everyone from elite athletes to corporate teams unlock their potential. Whether you're recovering from injury, optimizing performance, or building lasting health, I bring evidence-based strategies rooted in real-world application.</p>
+        </div>
+    </section>
+
+    <!-- Articles & Events Section -->
+    <section class="articles" id="articles">
+        <h2 class="section-title">Featured in & Speaking</h2>
+        <div class="articles-grid">
+            <div class="article-card">
+                <div class="article-card-content">
+                    <h4>APODA Articles</h4>
+                    <p>"Rethink What a Career in Podiatry Can Look Like"</p>
+                    <a href="https://stride.podiatry.org.au/articles/rethink-what-a-career-in-podiatry-can-look-like/" class="article-link" target="_blank">Read Article →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-card-content">
+                    <h4>Runner's World Australia</h4>
+                    <p>"I'm a Runner: Odette Blacklock"</p>
+                    <a href="https://runnersworldonline.com.au/im-a-runner-odette-blacklock/" class="article-link" target="_blank">Read Feature →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-card-content">
+                    <h4>Under Armour Run Camp</h4>
+                    <p>Death Valley Ultra Challenge</p>
+                    <a href="https://youtu.be/bHl83XGNO2s?si=b440V8_GLd8EZuMa" class="article-link" target="_blank">Watch Video →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-card-content">
+                    <h4>Virgin Active</h4>
+                    <p>Head Coach Profile & Training Approach</p>
+                    <a href="https://youtu.be/4p3TdG-oxBE?si=JZFeCdAYwBhDuCbI" class="article-link" target="_blank">Watch Video →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-card-content">
+                    <h4>City2Surf</h4>
+                    <p>Event Coverage & Performance</p>
+                    <a href="https://youtu.be/3cZYTkB7KDU?si=88vNUY-VM2oZlYk6" class="article-link" target="_blank">Watch Video →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <div class="article-card-content">
+                    <h4>International Women's Day</h4>
+                    <p>Keynote Speaker | Tweed Chapter 2022</p>
+                    <a href="https://events.humanitix.com/iwd-tweed-2022" class="article-link" target="_blank">View Event →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <h2 class="section-title">Client Reviews</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="review-text">"Odette's expertise and genuine care transformed my movement and confidence. Her methods are practical, grounded in science, and truly effective."</div>
+                <div class="review-author">— Client Testimonial</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="review-text">"Beyond coaching—Odette is a mentor who combines technical knowledge with real-world wisdom. Life-changing experience."</div>
+                <div class="review-author">— Client Testimonial</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="review-text">"Her approach to gait and rehabilitation is unparalleled. I've worked with many trainers; Odette is in a different league entirely."</div>
+                <div class="review-author">— Client Testimonial</div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; color: #667eea; font-size: 0.95rem;">
+            <a href="https://www.google.com/search?sca_esv=0a0a31734f5a42d0&sxsrf=APpeQnvU6o19baPA6JL1gFfN43U4Bok8lQ:1786746942807&q=odette+blacklock+reviews" target="_blank" style="color: #667eea;">See more reviews on Google →</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; text-align: left;">
+                <div>
+                    <h4 style="font-size: 1rem; margin-bottom: 0.8rem;">Book Your Session</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 0.5rem;">
+                        <a href="https://bodybreathmindset.mvt.so/" target="_blank" style="color: #667eea; text-decoration: none;">bodybreathmindset.mvt.so</a>
+                    </p>
+                </div>
+                <div>
+                    <h4 style="font-size: 1rem; margin-bottom: 0.8rem;">Inquiries & Bookings</h4>
+                    <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 0.5rem;">
+                        <a href="mailto:blacklockwellness@gmail.com" style="color: #667eea; text-decoration: none;">blacklockwellness@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.5rem; text-align: center;">
+                <p>&copy; 2024 Odette Blacklock. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
